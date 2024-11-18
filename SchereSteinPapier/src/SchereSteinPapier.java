@@ -20,7 +20,7 @@ public class SchereSteinPapier {
         determineWinner(playerChoice,computerChoice);
         System.out.println(getWinnerCount(playerCount, computerCount));
     }}
-// Prüfung der Eingabe vom Spieler notwendig.
+    
     public static int getPlayerChoice (){
         Scanner scanner = new Scanner(System.in);
         System.out.println("Wählen Sie 0: für Schere, 1: für Stein, 2: für Papier");
@@ -28,12 +28,15 @@ public class SchereSteinPapier {
         while(choice < 0 || choice > 2){
             if (scanner.hasNextInt()){
                 choice = scanner.nextInt();
-                if (choice < 0 || choice > 2){ // Wenn eine falsche Zahl eingegeben wird.
+                // Wenn eine falsche Zahl eingegeben wird.
+                if (choice < 0 || choice > 2){ 
                     System.out.println("Falsche Eingabe. Bitte wählen Sie 0: für Schere, 1: für Stein, 2: für Papier ");
                 }
-            }else{                           // Wenn keine Zahl eingegeben wird.
+            // Wenn keine Zahl eingegeben wird.
+            }else{                           
                 System.out.println("Falsche Eingabe. Bitte wählen Sie 0: für Schere, 1: für Stein, 2: für Papier ");
-                scanner.next(); //Löscht ungültige Eingabe (keine Zahl)
+                //Löscht ungültige Eingabe (keine Zahl)
+                scanner.next(); 
             }
         }
         return choice;
